@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simeon Portfolio</title>
+        <link rel="icon" href="./icon/logo.png" type="image/png"/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>
+        <header class="head">
+            <h1 id="Name">SIMEON SENGCO III</h1>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <div class="navigation-container">
+                <a href="#home"><img id="home-icon" src="bx-home.svg" alt="Home" /></a>
+                <a href="#education"><img id="education-icon" src="bxs-graduation.svg" alt="Education" /></a>
+                <a href="#skills"><img id="skills-icon" src="bx-laptop.svg" alt="Skills" /></a>
+                <a href="#contact"><img id="contact-icon" src="bx-message-dots.svg" alt="Contact" /></a>
+            </div>
+            <script>
+                const toggleBtn = document.getElementById('menu-toggle');
+                const navContainer = document.querySelector('.navigation-container');
+                toggleBtn.addEventListener('click', () => {
+                    navContainer.classList.toggle('active');
+                });
+            </script>
+        </header>
+
+        <section class="home" id="home">
+                <div class="greetings">
+                    <img id="greet" src="Hello.png" alt="image">
+                    <img id="pers" src="person2.png" alt="image">
+                </div>
+                <div class="home-info">
+                    <h2 id="effects-letter">I'm a 
+                        <span style="--i:4" data-text="Web Developer">Web Developer</span>
+                        <span style="--i:3" data-text="Graphic Artist">Graphic Artist</span>
+                        <span style="--i:2" data-text="Coffee Enthusiast">Coffee Enthusiast</span>
+                        <span style="--i:1" data-text="Fish Keeper">Fish Keeper</span>
+                    </h2>
+                </div>
+        </section>
+
+        <section class="educationalattainment" id="education">
+            <h3 id="EDUCATIONAL">EDUCATIONAL ATTAINMENT</h3>
+
+            <div class="education-grid">
+                <div class="education-box" style="background-image: url(gree.png);">
+                    <h1 class="BD">Bachelor Degree</h1>                    
+                    <p class="BD-info">Bachelor of Science in Information Technology</br>
+                    STI Academic Center</br>
+                    Caloocan City</br>
+                    2022-2024</br>
+                    <button id="BDbtn" onclick="toggleImage('STIcert')">Certificate and Achievement</button></p>
+                    <img id="STIcert" src="STI.jpg" alt="STI Certificate" style="display: none; width: 300px;">
+                </div>
+
+                <div class="education-box" style="background-image: url(orange.png);">
+                    <h1 class="SHS">Senior High School</h1>                    
+                    <p class="SHS-info">Science Technology Engineering and Mathematics</br>
+                        AMA Computer College</br>
+                        Caloocan City</br>
+                        2021-2022</br>
+                    <button id="SHSbtn" onclick="toggleImage('AMAcert')">Certificate and Achievement</button></p>
+                    <img id="AMAcert" src="AMA.jpg" alt="AMA Certificate" style="display: none; width: 300px;">
+                </div>
+
+                <div class="education-box" style="background-image: url(green1.png);">
+                    <h1 class="SSE">Secondary Education</h1>                    
+                    <p class="SSE-info">Tangos National High School</br>
+                    Navotas City</br>
+                    2015–2019</br></p>
+                </div>
+
+                <div class="education-box" style="background-image: url(blue.png);">
+                    <h1 class="PE">Primary Education</h1>                    
+                    <p class="PE-info">Tangos I Elementary School</br>
+                    Navotas City</br>
+                    2009–2015</br></p>
+                </div>
+            </div>
+
+            <script>
+                function toggleImage(id) {
+                    const img = document.getElementById(id);
+                    img.style.display = img.style.display === "none" ? "block" : "none";
+                }
+            </script>
+        </section>
+
+
+        <section class="skills" id="skills">
+
+            <h3>SKILLS</h3>
+            <div class = "boxes-container-I">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="ADOBE.png" alt="Avatar" style="width:300px;height:350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>ADOBE PHOTOSHOP</h1>
+                            <p>Adobe Photoshop is a versatile tool used for editing photos, creating graphics, designing layouts, and making digital art.
+                                It's widely used by photographers, designers, and artists for its powerful features like layering, retouching, and special effects. </p>
+                        </div>
+                        <script>
+                            const flipCard = document.getElementById('flipCard');
+                            flipCard.addEventListener('click', () => {
+                            flipCard.classList.toggle('flip'); // Toggles the flip class
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="ENGLISH.png" alt="Avatar" style="width:300px;height:350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>ENGLISH</h1>
+                            <p>English is widely used as a global language, serving as a common means of communication across diverse cultures and regions.
+                                It plays a crucial role in international business, education, and technology, connecting people from different backgrounds.
+                                As the dominant language in many fields, such as science, entertainment, and diplomacy, English has become essential for
+                                accessing information, building relationships, and participating in global conversations.</p>
+                        </div>
+                        <script>
+                            const flipCard1 = document.getElementById('flipCard');
+                            flipCard1.addEventListener('click', () => {
+                            flipCard1.classList.toggle('flip'); // Toggles the flip class
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="VIDEO EDITING.png" alt="Avatar" style="width:300px;height:350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>VIDEO EDITING</h1>
+                            <p>Video editing is the process of manipulating and rearranging video footage to create a desired final product. It involves tasks
+                                such as trimming clips, adding transitions, incorporating audio, applying visual effects, and adjusting color. Video editing can
+                                be done using software like Adobe Premiere Pro, Final Cut Pro, or DaVinci Resolve, and is essential for creating everything from
+                                movies and TV shows to YouTube videos and social media content. The goal of video editing is to enhance the narrative, improve
+                                pacing, and deliver a polished, engaging experience for the viewer.</p>
+                        </div>
+                        <script>
+                            const flipCard2 = document.getElementById('flipCard');
+                            flipCard2.addEventListener('click', () => {
+                            flipCard2.classList.toggle('flip'); // Toggles the flip class
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            
+            <div class = "boxes-container-II">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="EXCEL.png" alt="Avatar" style="width:300px;height:350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>EXCEL</h1>
+                            <p>Excel is a powerful spreadsheet tool by Microsoft, used for organizing, analyzing, and visualizing data. It offers functions like
+                                formulas, pivot tables, and charts, making it essential for tasks in business, finance, and personal projects.</p>
+                        </div>
+                        <script>
+                            const flipCard3 = document.getElementById('flipCard');
+                            flipCard3.addEventListener('click', () => {
+                            flipCard3.classList.toggle('flip'); // Toggles the flip class
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="WORD.png" alt="Avatar" style="width:300px;height:350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>WORD</h1>
+                            <p>Microsoft Word is a word processing application used for creating, editing, and formatting text documents. It offers features like spell check,
+                                templates, tables, and collaboration tools, making it essential for writing reports, letters, and other professional or personal documents.</p>
+                        </div>
+                        <script>
+                            const flipCard4 = document.getElementById('flipCard');
+                            flipCard4.addEventListener('click', () => {
+                            flipCard4.classList.toggle('flip'); // Toggles the flip class
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="PPT.png" alt="Avatar" style="width:300px;height:350px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>POWERPOINT</h1>
+                            <p>Microsoft PowerPoint is a presentation software used to create slideshows for business, education, or personal use. It allows users to add text,images,
+                                videos, and animations to create engaging presentations.</p>
+                        </div>
+                        <script>
+                            const flipCard5 = document.getElementById('flipCard');
+                            flipCard5.addEventListener('click', () => {
+                            flipCard5.classList.toggle('flip'); // Toggles the flip class
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-information" id="contact">
+
+            <div class="about-me">
+                <h3>ABOUT ME</h3>
+                    <h1>Hello! I'm Simeon Sengco III</h1>
+                    <p>Welcome to my personal portfolio — a space where creativity meets functionality. I'm a passionate <strong>Web Developer</strong> and <strong>UI/UX Designer</strong> with a keen eye for detail and a love for crafting engaging digital experiences. From front-end magic to back-end logic, I turn ideas into interactive, user-centered solutions.<br/>
+                    Explore my work, skills, and journey — and let’s build something great together. <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>©2025 Simeon Sengco III | All Rights Reserved</p>
+            </div>
+
+            <div class="contact-me">
+                <h3>LET'S CONNECT</h3>
+                    <div class="Container-footer">
+                        <div class="contact-icons">
+                        <a href="https://www.facebook.com/share/1Et2WFJuYK/?mibextid=wwXIfr" target="_blank">
+                            <i class='bx bxl-facebook'></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/_ibarra1106?igsh=dWFkNTNvY3B2eTZp&utm_source=qr" target="_blank">
+                            <i class='bx bxl-instagram'></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.threads.com/@_ibarra1106?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
+                            <i class='bx bxl-threads'></i>
+                            <span>Threads</span>
+                        </a>
+                        <a href="mailto:sengcosimeon1106@gmail.com">
+                            <i class='bx bxl-gmail'></i>
+                            <span>Gmail</span>
+                        </a>
+                        <a href="mailto:simeonsengco@pure-ride.com">
+                            <i class='bx bxl-microsoft'></i>
+                            <span>Outlook</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@darkedges1106?_t=ZS-8xErPjmxpvp&_r=1" target="_blank">
+                            <i class='bx bxl-tiktok'></i>
+                            <span>TikTok</span>
+                        </a>
+                        <a href="viber://chat?number=+639934039625">
+                            <i class='bx bxl-viber'></i>
+                            <span>Viber</span>
+                        </a>
+                    </div>
+                </div>
+        </section>
+    </body>
+
+</html>

@@ -1,0 +1,484 @@
+/* --- BASE STYLES (already provided) --- */
+* {
+    margin: 0px;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+/* ICON BUTTONS */
+#home-icon, #education-icon, #skills-icon, #contact-icon {
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+    fill: black;
+    background-color: transparent;
+    border: none;
+}
+
+#home-icon:hover,
+#education-icon:hover,
+#skills-icon:hover,
+#contact-icon:hover {
+    background-color: rgb(111, 129, 123);
+    border-radius: 40%;
+    transition: 0.5s;
+
+}
+
+#home-icon:active,
+#education-icon:active,
+#skills-icon:active,
+#contact-icon:active {
+    background-color: var(--active-color);
+}
+
+/* HEADER */
+.head {
+    background-color: rgb(255, 241, 215);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    z-index: 5;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px 6px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* NAVIGATION */
+.navigation-container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* MAIN SECTIONS */
+.home, .educationalattainment, .skills, .contact-information { /* Corrected typo: comtact-imformation to contact-information */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 20pt;
+    color:#ffffff;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+.home {
+    background-image: url("Background1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 6rem 0;
+    display: flex; /* Added for centering content vertically */
+    flex-direction: column; /* Added for centering content vertically */
+    justify-content: center; /* Added for centering content vertically */
+    align-items: center; /* Added for centering content vertically */
+}
+
+.greetings {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+#greet, #pers{
+    flex: 1 1 45%;
+    max-width: 650px;
+    height: auto;
+}
+
+/* TEXT EFFECTS */
+.home-info h2 {
+    display: inline-block;
+    font-size: 32px;
+    margin-top: -10px;
+}
+
+.home-info h2 span {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: .7px #cc781f;
+    animation: display-text 16s linear infinite;
+    animation-delay: calc(-4s *var(--i));
+}
+
+@keyframes display-text {
+    25%, 100% {
+       display: none;
+    }
+}
+
+.home-info h2 span::before {
+   content: attr(data-text);
+   position: absolute;
+   width: 0%;
+   border-right: 2px solid #cc781f;
+   color: #cc781f;
+   white-space: nowrap;
+   overflow: hidden;
+   animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+   10%, 100% {
+       width: 0;
+   }
+
+   70%, 90% {
+       width: 100%;
+   }
+}
+
+.home-info p {
+   font-size: 5rem;
+   margin: 10px 0 25px;
+}
+
+.home-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    gap: 1rem;
+    background-image: url(icon/textbox.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+/* HAMBURGER MENU */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation-container {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgb(255, 241, 215);
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 1rem 2rem;
+        display: none;
+        z-index: 10;
+    }
+
+    .navigation-container.active {
+        display: flex;
+    }
+
+    .head {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .home-info h2 {
+        font-size: 1.8rem; /* Adjusted for tablets */
+        text-align: center;
+    }
+
+    .home-info p {
+        font-size: 3rem; /* Adjusted for tablets */
+        text-align: center;
+    }
+
+    #greet, #pers {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr; /* Stack education boxes on smaller screens */
+    }
+
+    .boxes-container-I, .boxes-container-II {
+        gap: 2rem; /* Reduce gap between skill cards */
+    }
+
+    .contact-information {
+        flex-direction: column; /* Stack contact sections vertically */
+        padding: 1rem;
+    }
+
+    .about-me, .contact-me {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-info h2 {
+        font-size: 1.2rem; /* Further adjusted for mobile phones */
+    }
+
+    .home-info p {
+        font-size: 2rem; /* Further adjusted for mobile phones */
+    }
+
+    .greetings {
+        padding: 1rem;
+    }
+
+    .navigation-container {
+        padding: 1rem;
+    }
+
+    .education-box {
+        min-height: 350px; /* Adjust height for better fit on small screens */
+    }
+
+    .flip-card {
+        width: 250px; /* Adjust width of flip cards */
+        height: 300px; /* Adjust height of flip cards */
+    }
+
+    .flip-card-front img {
+        width: 250px;
+        height: 300px;
+    }
+
+    .contact-icons {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* More columns for icons */
+        gap: 0.5rem;
+    }
+
+    .contact-icons i {
+        font-size: 1.5rem; /* Smaller icons */
+    }
+
+    .about-me p {
+        font-size: 10pt; /* Smaller font for about me section */
+    }
+}
+
+
+
+/*EDUCATION*/
+.educationalattainment {
+    padding: 3rem;
+    font-family: Arial, sans-serif;
+    background-color: rgb(205, 223, 208);
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.education-box {
+    position: relative;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    padding: 1rem;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+#SHSbtn, #BDbtn {
+    background-color: #ffcc70;
+    color: #002517;
+    font-weight: 600;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+#SHSbtn:hover, #BDbtn:hover {
+    background-color: #ffa500;
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+#SHSbtn, #BDbtn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+#AMAcert, #STIcert{
+    border-radius: 12px;
+    padding-top: 8px;
+}
+
+
+/*SKILLS*/
+.skills{
+    background-image: url("Background2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto; /* Changed from fixed height to auto for responsiveness */
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#skills-head{ /* Changed from #skills-text to #skills-head */
+    font-size: 2rem;
+    color: oldlace;
+    font-weight: 800;
+    -webkit-text-stroke: 1px #002517;
+    margin-bottom: 2rem;
+}
+
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 350px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin-bottom: 2rem; /* Add margin for spacing between cards */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 12px;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: oldlace;
+  padding: 10px;
+  color: black;
+  transform: rotateY(180deg);
+  text-align: justify;
+}
+
+.boxes-container-I, .boxes-container-II{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    margin-bottom: 2rem;
+}
+    /* Removed the individual rectangle styles as they are replaced by flip-card structure */
+
+
+    /*CONTACT*/
+    .contact-information {
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; /* space between boxes */
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    text-align: center;
+    }
+
+    .contact-section h1 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #333;
+    }
+    .contact-icons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+    }
+    .contact-icons a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+.contact-icons a:hover {
+transform: translateY(-8px);
+}
+.contact-icons i {
+font-size: 2rem;
+margin-bottom: 0.5rem;
+color: #0077ff;
+}
+.Container-footer{
+background: #f4f4f4;
+display: flex;
+justify-content: center;
+}
+.about-me, .contact-me{
+flex: 1; /* equal width */
+padding: 1rem;
+background-color: #e1e5e7;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+text-align: justify;
+font-size: 12pt;
+}
+
+/* Existing media query for contact-information, slightly modified */
+@media (max-width: 768px){
+    .contact-information {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+}
+.Container-footer{
+    background-color: #ffffff;
+    border-radius: 8px;
+}
